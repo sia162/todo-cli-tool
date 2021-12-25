@@ -2,7 +2,6 @@
 1 buy pen
 3 meditate
 4 make food
-5 study
 7 feed cat
 9 make art
 11 sing
