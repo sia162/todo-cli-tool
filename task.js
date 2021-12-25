@@ -2,6 +2,7 @@ const help = require("./utility/help");
 const add = require("./utility/add");
 const ls = require("./utility/ls");
 const del = require("./utility/del");
+const done = require("./utility/done");
 
 (() => {
   let flags = [];
@@ -17,6 +18,8 @@ const del = require("./utility/del");
 
   var isDel = flags.indexOf("del") !== -1 ? true : false;
 
+  var isDone = flags.indexOf("done") !== -1 ? true : false;
+
   //WELCOME
   help(isHelp);
 
@@ -30,4 +33,8 @@ const del = require("./utility/del");
   //DELETE TASk
   delFlags = [...process.argv.slice(3)];
   del(isDel, parseInt(delFlags.toString()));
+
+  //DONE TASK
+  doneFlags = [...process.argv.slice(3)];
+  done(isDone, parseInt(doneFlags.toString()));
 })();

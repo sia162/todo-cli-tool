@@ -12,7 +12,7 @@ module.exports = (isAdd, addFlags) => {
           else {
             console.log(
               "Added task: " +
-                `"${tasktoadd.substr(2)}"` +
+                `"${tasktoadd.substr(2).trim()}"` +
                 " with priority " +
                 parseInt(tasktoadd)
             );

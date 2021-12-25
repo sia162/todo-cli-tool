@@ -2,16 +2,14 @@ const fs = require("fs");
 
 module.exports = (isDel, indexToDel) => {
   if (isDel) {
-    if (indexToDel != NaN) {
+    if (indexToDel) {
       fs.readFile("task.txt", "UTF-8", (err, data) => {
         var array;
         if (data != undefined) {
           array = data.split("\n");
 
-          var elepresent = false;
-          array.map((item, index) => {
-            if (indexToDel === index) elepresent = true;
-          });
+          var elepresent = true;
+          if (indexToDel >= array.length || indexToDel < 1) elepresent = false;
 
           if (elepresent) {
             array = array.filter((item, index) => index !== indexToDel);
@@ -33,6 +31,8 @@ module.exports = (isDel, indexToDel) => {
           }
         }
       });
+    } else {
+      console.log("Error: 'task help' for more information!");
     }
   }
 };
